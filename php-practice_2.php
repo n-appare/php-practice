@@ -31,19 +31,18 @@ $personalInfos = [
       'tel'  => '09055556666'
   ],
 ];
-var_dump($personalInfos);
 ///問題1
 echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
 ///問題2
-foreach ($personalInfos as $x => $y) {
-  echo $x + 1 . '番目の' . $personalInfos[$x]['name'] . 'のメールアドレスは' . $personalInfos[$x]['mail'] . 'で、電話番号は' . $personalInfos[$x]['tel'] . 'です。' . "\n";
+foreach ($personalInfos as $memberOrder => $memberInfomation) {
+  echo $memberOrder + 1 . '番目の' . $personalInfos[$memberOrder]['name'] . 'のメールアドレスは' . $personalInfos[$memberOrder]['mail'] . 'で、電話番号は' . $personalInfos[$memberOrder]['tel'] . 'です。' . "\n";
 }
 
 ///問題3
 $ageList = [25, 30, 18];
-foreach ($ageList as $x => $y) {
-    $personalInfos[$x]['age'] = $y;
+foreach ($ageList as $memberOrder => $memberInfomation) {
+    $personalInfos[$memberOrder]['age'] = $memberInfomation;
 }
 var_dump($personalInfos);
 

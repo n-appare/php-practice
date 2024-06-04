@@ -27,18 +27,30 @@ echo ($age < 18) ? '未成年です。' : '成人です。';
 
 
 // Q6 配列
-$prefecture = ['東京都', '神奈川県', '栃木県', '千葉県', '茨城県', '埼玉県', '群馬県'];
+$prefecture = [
+    '東京都',
+    '神奈川県',
+    '栃木県',
+    '千葉県',
+    '茨城県',
+    '埼玉県',
+    '群馬県'
+    ];
 echo $prefecture[2] . 'と' . $prefecture[3] . 'は関東地方の都道府県です。';
 
 // Q7 連想配列-1
-$capitals = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
-echo $capitals['東京都'] . "\n";
-echo $capitals['神奈川県'] . "\n";
-echo $capitals['千葉県'] . "\n";
-echo $capitals['埼玉県'] . "\n";
-echo $capitals['栃木県'] . "\n";
-echo $capitals['群馬県'] . "\n";
-echo $capitals['茨城県'];
+$capitals = [
+    '東京都' => '新宿区',
+    '神奈川県' => '横浜市',
+    '千葉県' => '千葉市',
+    '埼玉県' => 'さいたま市',
+    '栃木県' => '宇都宮市',
+    '群馬県' => '前橋市',
+    '茨城県' => '水戸市'
+    ];
+foreach ($capitals as $state => $city) {
+    echo $city . "\n";
+}
 
 // Q8 連想配列-2
 $SearchPrefecture = '埼玉県';
@@ -62,33 +74,35 @@ while ($PrefectureName = current($capitals)) {
 // Q10 関数-1
 function hello($GreetName)
 {
-    echo $GreetName . "さん、こんにちは。\n";
+    return $GreetName . "さん、こんにちは。\n";
 }
 
-hello('金谷');
-hello('安藤');
+echo hello('金谷');
+echo hello('安藤');
 
 // Q11 関数-2
+$price = 1000;
 function calcTaxPrice($price)
 {
     $taxInPrice = $price * 1.1;
-    echo $price . '円の商品の税込み価格は' . $taxInPrice . "円です。\n";
+    return $taxInPrice;
 }
+$taxInPrice = calcTaxPrice($price);
 
-calcTaxPrice(1000);
+echo $price . '円の商品の税込み価格は' . $taxInPrice . "円です。\n";
 
 // Q12 関数とif文
 function distinguishNum($Number)
 {
     if ($Number % 2 === 0) {
-        echo $Number . "は偶数です。\n";
+        return $Number . "は偶数です。\n";
     } else {
-        echo $Number . "は奇数です。\n";
+        return $Number . "は奇数です。\n";
     }
 }
 
-distinguishNum(11);
-distinguishNum(24);
+echo distinguishNum(11);
+echo distinguishNum(24);
 
 // Q13 関数とswitch文
 function evaluateGrade($Grade)
@@ -96,21 +110,17 @@ function evaluateGrade($Grade)
     switch ($Grade) {
         case 'A':
         case 'B':
-            echo "合格です。\n";
-            break;
+            return "合格です。\n";
         case 'C':
-            echo "合格ですが追加課題があります。\n";
-            break;
+            return "合格ですが追加課題があります。\n";
         case 'D':
-            echo "不合格です。\n";
-            break;
+            return "不合格です。\n";
         default:
-            echo "判定不明です。講師に問い合わせてください。\n";
-            break;
+            return "判定不明です。講師に問い合わせてください。\n";
     }
 }
 
-evaluateGrade('A');
-evaluateGrade('');
+echo evaluateGrade('A');
+echo evaluateGrade('');
 
 ?>
