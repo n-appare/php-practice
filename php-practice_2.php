@@ -14,7 +14,7 @@ for ($i = 1; $i <= 100; $i++) {
 }
 
 // Q2 多次元連想配列
-$personalInfos = [
+$PersonalInfos = [
   [
       'name' => 'Aさん',
       'mail' => 'aaa@mail.com',
@@ -32,44 +32,44 @@ $personalInfos = [
   ],
 ];
 ///問題1
-echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
+echo $PersonalInfos[1]['name'] . 'の電話番号は' . $PersonalInfos[1]['tel'] . 'です。' . "\n";
 
 ///問題2
-foreach ($personalInfos as $memberOrder => $memberInfomation) {
-  echo $memberOrder + 1 . '番目の' . $personalInfos[$memberOrder]['name'] . 'のメールアドレスは' . $personalInfos[$memberOrder]['mail'] . 'で、電話番号は' . $personalInfos[$memberOrder]['tel'] . 'です。' . "\n";
+foreach ($PersonalInfos as $x => $MemberInfomation) {
+  echo $x + 1 . '番目の' . $PersonalInfos[$x]['name'] . 'のメールアドレスは' . $PersonalInfos[$x]['mail'] . 'で、電話番号は' . $PersonalInfos[$x]['tel'] . 'です。' . "\n";
 }
 
 ///問題3
-$ageList = [25, 30, 18];
-foreach ($ageList as $memberOrder => $memberInfomation) {
-    $personalInfos[$memberOrder]['age'] = $memberInfomation;
+$AgeList = [25, 30, 18];
+foreach ($AgeList as $x => $MemberInfomation) {
+    $PersonalInfos[$x]['age'] = $MemberInfomation;
 }
-var_dump($personalInfos);
+var_dump($PersonalInfos);
 
 // Q3 オブジェクト-1
 class Student
 {
-    public $studentId;
-    public $studentName;
+    public $StudentId;
+    public $StudentName;
 
     public function __construct($id, $name)
     {
-        $this->studentId = $id;
-        $this->studentName = $name;
+        $this->StudentId = $id;
+        $this->StudentName = $name;
     }
 
-    public function attend($programmingClass)
+    public function attend($ProgrammingClass)
     {
-        echo $this->studentName . 'は' . $programmingClass . 'の授業に参加しました。学籍番号：' . $this->studentId;
+        echo $this->StudentName . 'は' . $ProgrammingClass . 'の授業に参加しました。学籍番号：' . $this->studentId;
     }
 }
 
-$yamada = new Student(120, '山田');
-echo '学籍番号'. $yamada->studentId . '番の生徒は' . $yamada->studentName . 'です。';
+$Yamada = new Student(120, '山田');
+echo '学籍番号'. $Yamada->StudentId . '番の生徒は' . $Yamada->StudentName . 'です。';
 
 // Q4 オブジェクト-2
-$yamada = new Student(120, '山田');
-$yamada->attend('PHP');
+$Yamada = new Student(120, '山田');
+$Yamada->attend('PHP');
 
 // Q5 定義済みクラス
 ///問題1
