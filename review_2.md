@@ -34,9 +34,9 @@ public function __construct($id, $name)
     $this->studentId = $id;
     $this->studentName = $name;
 }
-- コンストラクタは$idと$nameという２つのパラメータを受け取り、これらは新しいインスタンスが作成される際にコンストラクタに渡す値です。$this->studentId と$this->studentNameはプロパティであり、新しいインスタンスが作成された際にそれぞれのプロパティを引数で渡された値で初期化しています。
-新しいインスタンスが作成された際に$this->studentId と$this->studentNameのプロパティに渡された引数で初期化するため必要です。
 ```
+- コンストラクタは$idと$nameの引数をインスタンス化と同時に受け取り、$this->studentId と$this->studentNameのプロパティに$idと$nameの引数を代入している。この2行は初期値としてそれ以降の$this->studentId と$this->studentNameのプロパティに値に渡すことができるので必要です。
+
 
 ## クラスがなぜ必要なのか説明してください。
 - クラスを使用することで類似の機能やデータ構造を持つ複数のオブジェクトを簡単に作成でき、同じ機能を持つコードの再利用が容易になります。また、関連する機能やデータをクラスにまとめているので特定の修正を行う際に影響範囲を把握しやすくなります。
@@ -54,4 +54,4 @@ $prev = new DateTime('2000-1-1');
 echo $prev->diff($now)->format('%a')
 ```
 
-- PHPのマニュアルで`DateTime::diff`と検索し、小見出しの戻り値の箇所に「ふたつの日付の差を表すDateintervalのオブジェクトを返します」と書いてあります。さらに、`Dateinterval::format`で検索することによりformatの%やaの意味などが記載したマニュアルを見ることができる。
+- formatがどのオブジェクトのformatか不明であるためアロー演算子の1つ前のdiffに着目します。diffも同様にどのオブジェクトのdiffか不明であるため、$prevのオブジェクトであるDateTimeをPHPのマニュアルで検索し、その中からdiffを検索し、formatを検索すると小見出しの戻り値の箇所に「ふたつの日付の差を表すDateintervalのオブジェクトを返します」と書いてあります。さらに、`Dateinterval::format`で検索することによりformatの%やaの意味などが記載したマニュアルを見ることができる。

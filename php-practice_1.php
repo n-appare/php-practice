@@ -63,7 +63,14 @@ $Capitals['愛知県'] = '名古屋市';
 $Capitals['大阪府'] = '大阪市';
 
 while ($PrefectureName = current($Capitals)) {
-  if (in_array($PrefectureName, ['東京都', '神奈川県', '栃木県', '千葉県', '茨城県', '埼玉県', '群馬県'])) {
+  if (in_array($PrefectureName, [
+            '東京都',
+            '神奈川県',
+            '栃木県',
+            '千葉県',
+            '茨城県',
+            '埼玉県',
+            '群馬県'])) {
       echo $PrefectureName . 'の県庁所在地は、' . $Capitals[$PrefectureName] . 'です。' . "\n";
   } else {
       echo $PrefectureName . 'は関東地方ではありません。' . "\n";
@@ -84,12 +91,12 @@ echo hello('安藤');
 $Price = 1000;
 function calcTaxPrice($Price)
 {
-    $taxInPrice = $Price * 1.1;
-    return $taxInPrice;
+    $TaxInPrice = $Price * 1.1;
+    return $TaxInPrice;
 }
-$taxInPrice = calcTaxPrice($Price);
+$TaxInPrice = calcTaxPrice($Price);
 
-echo $Price . '円の商品の税込み価格は' . $taxInPrice . "円です。\n";
+echo $Price . '円の商品の税込み価格は' . $TaxInPrice . "円です。\n";
 
 // Q12 関数とif文
 function distinguishNum($Number)
@@ -122,5 +129,3 @@ function evaluateGrade($Grade)
 
 echo evaluateGrade('A');
 echo evaluateGrade('');
-
-?>

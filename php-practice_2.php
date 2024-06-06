@@ -4,9 +4,9 @@ echo '1から100までのカウントを開始します' . "\n";
 for ($i = 1; $i <= 100; $i++) {
     if ($i % 4 === 0 && $i % 5 === 0) {
       echo 'tic-tac' . "\n";
-    } else if ($i % 5 === 0) {
+    } elseif ($i % 5 === 0) {
       echo 'tac' . "\n";
-    } else if ($i % 4 === 0) {
+    } elseif ($i % 4 === 0) {
       echo 'tic' . "\n";
     } else {
       echo $i . "\n";
@@ -82,4 +82,3 @@ $Today = new DateTime('now', new DateTimeZone('Asia/Tokyo'));
 $PastDay = new DateTime('1992-4-25');
 $NumberOfDays = $PastDay->diff($Today);
 echo 'あの日から' . $NumberOfDays->format('%a') . '日経過しました。';
-?>
